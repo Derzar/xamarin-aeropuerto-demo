@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aeropuerto.Views.Vuelos"
+             Title="Vuelos"
+             IconImageSource="vuelos.png">
+    <StackLayout>
+        <StackLayout VerticalOptions="Center">
+            <Label Text="ITINERARIO DE VUELOS" HorizontalOptions="Center" FontSize="Title" TextColor="Black" Margin="10"></Label>
+        </StackLayout>
+        <Frame CornerRadius="10" BackgroundColor="#488CF4" Grid.Row="0" Margin="10">
+            <ListView x:Name="listaVuelos" Margin="0.1" HasUnevenRows="True" SelectionMode="None">
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame CornerRadius="10" Margin="0" Padding="0">
+                                <SwipeView>
+                                    <SwipeView.RightItems>
+                                        <SwipeItems Mode="Reveal">
+                                            <SwipeItem x:Name="SwipeBorrarVuelo" Text="Eliminar" BackgroundColor="Red" Invoked="SwipeBorrarVuelo_Invoked"/>
+                                            <SwipeItem x:Name="SwipeActualizarVuelo" Text="Actualizar" BackgroundColor="Yellow" Invoked="SwipeActualizarVuelo_Invoked"/>
+                                        </SwipeItems>
+                                    </SwipeView.RightItems>
+                                    <Frame CornerRadius="10" Margin="5" Padding="10">
+                                        <Grid BackgroundColor="Snow" HorizontalOptions="FillAndExpand" >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="Aerolinea:" Grid.Row="0" Grid.Column="0" FontAttributes="Bold"/>
+                                            <Label Text="{Binding Aerolinea}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" />
+                                            <Label Text="Asientos Disponibles:" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" FontAttributes="Bold"/>
+                                            <Label Text="{Binding AsientosDisponibles}" Grid.Row="1" Grid.Column="2" />
+                                            <Label Text="Origen:" Grid.Row="2" Grid.Column="0" FontAttributes="Bold"/>
+                                            <Label Text="{Binding Origen}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"/>
+                                            <Label Text="Destino:" Grid.Row="3" Grid.Column="0" FontAttributes="Bold"/>
+                                            <Label Text="{Binding Destino}" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"/>
+                                            <Label Text="Fecha Salida:" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" FontAttributes="Bold"/>
+                                            <Label Text="{Binding FechaSalida}" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" FontSize="12"  VerticalOptions="End"/>
+                                            <Label Text="Fecha Llegada:" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" FontAttributes="Bold"/>
+                                            <Label Text="{Binding FechaLlegada}" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2"  FontSize="12" VerticalOptions="End"/>
+                                        </Grid>
+                                    </Frame>
+                                </SwipeView>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Frame>
+        <Button x:Name="btnAgregarVuelo" Text="Agregar" FontSize="Subtitle" BackgroundColor="#488CF4" BorderRadius="10" TextColor="White" HorizontalOptions="Center" VerticalOptions="End" Clicked="btnAgregarVuelo_Clicked"/>
+    </StackLayout>
+</ContentPage>

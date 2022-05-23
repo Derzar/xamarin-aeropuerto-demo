@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aeropuerto.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="20" CornerRadius="0">
+            <Label Text="Aeropuerto" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <StackLayout Padding="20">
+            <Image Source="avion.png" />
+            <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Text="¡Bienvenido!" Grid.Row="0" HorizontalOptions="Center" Margin="10" Padding="25" FontSize="Title" FontFamily="Arial" TextColor="Black"/>
+                <Button x:Name="btnEntrar" Text="Entrar" Grid.Row="2" FontSize="Subtitle" BackgroundColor="#488CF4" BorderRadius="10" TextColor="White" HorizontalOptions="Center" VerticalOptions="End" Margin="10" Padding="15" Clicked="btnEntrar_Clicked"/>
+            </Grid>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

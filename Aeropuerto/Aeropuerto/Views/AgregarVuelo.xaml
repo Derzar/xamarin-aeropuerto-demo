@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Aeropuerto.Views.AgregarVuelo"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             Title="AgregarVuelo">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="20" CornerRadius="0">
+                <StackLayout>
+                    <Label x:Name="TituloAgregar" Text="Agregar Vuelo" HorizontalTextAlignment="Center" TextColor="White" FontSize="Title"/>
+                    <Label x:Name="TituloActualizar" Text="Actualizar Vuelo" HorizontalTextAlignment="Center" TextColor="White" FontSize="Title" IsVisible="False"/>
+                </StackLayout>
+            </Frame>
+            <StackLayout Padding="20" VerticalOptions="Fill">
+                <Grid Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Aerolinea:" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" TextColor="Black" VerticalOptions="Center"/>
+                    <Entry x:Name="Aerolinea" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" />
+                    <Label Text="Origen:" Grid.Row="1" Grid.Column="0" FontAttributes="Bold"  TextColor="Black" VerticalOptions="Center"/>
+                    <Entry x:Name="Origen" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"/>
+                    <Label Text="Destino:" Grid.Row="2" Grid.Column="0" FontAttributes="Bold"  TextColor="Black" VerticalOptions="Center"/>
+                    <Entry x:Name="Destino" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"/>
+                    <Label Text="Fecha Salida:" Grid.Row="3" Grid.Column="0" FontAttributes="Bold"  TextColor="Black" VerticalOptions="Center"/>
+                    <DatePicker x:Name="FechaSalida" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Date="{x:Static sys:DateTime.Today}" Format="dd/MM/yyyy" MinimumDate="{x:Static sys:DateTime.Today}" />
+                    <Label Text="Hora de Salida: " Grid.Row="4" Grid.Column="0" FontAttributes="Bold"  TextColor="Black" VerticalOptions="Center"/>
+                    <TimePicker x:Name="HoraSalida" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Format="HH:mm:ss"/>
+                    <Label Text="Fecha Llegada:" Grid.Row="5" Grid.Column="0" FontAttributes="Bold" TextColor="Black" VerticalOptions="Center"/>
+                    <DatePicker x:Name="FechaLlegada" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Date="{x:Static sys:DateTime.Today}" Format="dd/MM/yyyy" MinimumDate="{x:Static sys:DateTime.Today}" />
+                    <Label Text="Hora de Llegada: " Grid.Row="6" Grid.Column="0" FontAttributes="Bold"  TextColor="Black" VerticalOptions="Center"/>
+                    <TimePicker x:Name="HoraLlegada" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" Format="HH:mm:ss"/>
+                    <Label Text="Precio Total del Vuelo:" Grid.Row="7" Grid.Column="0" FontAttributes="Bold"  TextColor="Black" VerticalOptions="Center"/>
+                    <Entry x:Name="PrecioVuelo" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" Keyboard="Numeric" />
+                    <Label Text="Numero de Asientos:" Grid.Row="8" Grid.Column="0" FontAttributes="Bold"  TextColor="Black" VerticalOptions="Center"/>
+                    <Entry x:Name="NumeroAsientos" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3" Keyboard="Numeric"/>
+                    <Button x:Name="btnGuardar" Text="Guardar" Margin="10" BackgroundColor="#488CF4" BorderRadius="10" TextColor="White"  HorizontalOptions="Center" Padding="15" FontSize="Subtitle" Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="2" Clicked="btnGuardar_Clicked"/>
+                    <Button x:Name="btnCancelar" Text="Cancelar" Margin="10" BackgroundColor="#F0A745" BorderRadius="10" TextColor="White"  HorizontalOptions="Center" Padding="15" FontSize="Subtitle" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Clicked="btnCancelar_Clicked"/>
+                    <Button x:Name="btnActualizar" IsEnabled="False" IsVisible="False" Text="Actualizar" BackgroundColor="#488CF4" BorderRadius="10" TextColor="White"  Margin="10" HorizontalOptions="Center" Padding="15" FontSize="Subtitle" Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="2" Clicked="btnActualizar_Clicked"/>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    
